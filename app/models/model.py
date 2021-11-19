@@ -8,7 +8,7 @@ load_dotenv()
 configs = {
     "host": getenv("HOST"),
     "database": getenv("DATABASE"),
-    "users": getenv("USERS"),
+    "user": getenv("USER"),
     "password": getenv("PASSWORD")
 }
 
@@ -18,10 +18,10 @@ class Series:
     FIELDNAMES = ["id", "serie", "seasons", "released_date", "genre", "imdb_rating"]
 
     def __init__(self, serie: str, seasons: int, released_date: str, genre: str, imdb_rating: float) -> None:
-        self.serie = serie
+        self.serie = serie.title()
         self.seasons = seasons
         self.released_date = released_date
-        self.genre = genre
+        self.genre = genre.title()
         self.imdb_rating = imdb_rating
 
     @staticmethod
