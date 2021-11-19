@@ -107,8 +107,6 @@ class Series:
         )
 
         show_one_data = cur.fetchone()
-        # if show_one_data is NoneType:
-        #     return dict()
         result = dict(zip(Series.FIELDNAMES, show_one_data))
 
         conn.commit()
